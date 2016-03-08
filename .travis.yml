@@ -13,6 +13,7 @@ env:
   - BOX_HOST_NAME=foxbox BOX_PORT=3000
 
 before_install:
+  - ls -lR $TRAVIS_BUILD_DIR
   - sudo apt-get -qq update
   - sudo apt-get install -y avahi-daemon libavahi-client-dev libavahi-common-dev libavahi-common3 libdbus-1-dev libupnp-dev
   - sudo usermod -a -G netdev $USER # "netdev" group membership allows to set custom host name via avahi-daemon.
